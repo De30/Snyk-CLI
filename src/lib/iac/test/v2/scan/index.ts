@@ -40,9 +40,11 @@ function scanWithConfig(
   configPath: string,
 ): SnykIacTestOutput {
   const args = ['-bundle', rulesBundlePath, '-config', configPath];
-
   if (options.severityThreshold) {
     args.push('-severity-threshold', options.severityThreshold);
+  }
+  if (options.projectTags) {
+    args.push('-project-tags', JSON.stringify(options.projectTags));
   }
 
   args.push(...options.paths);
@@ -77,7 +79,6 @@ function createConfig(options: TestConfig): string {
   try {
     const tempDir = fs.mkdtempSync(path.join(os.tmpdir(), 'snyk-'));
     const tempConfig = path.join(tempDir, 'config.json');
-
     const configData = JSON.stringify({
       org: options.orgSettings.meta.org,
       apiUrl: config.API,
