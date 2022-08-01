@@ -8,5 +8,6 @@ export interface TestConfig {
   userPolicyEnginePath?: string;
   projectName: string;
   orgSettings: IacOrgSettings;
+  shouldShareResults: boolean;
   severityThreshold?: SEVERITY;
 }

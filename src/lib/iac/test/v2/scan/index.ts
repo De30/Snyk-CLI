@@ -45,6 +45,10 @@ function scanWithConfig(
     args.push('-severity-threshold', options.severityThreshold);
   }
 
+  if (options.shouldShareResults) {
+    args.push('-report');
+  }
+
   args.push(...options.paths);
 
   const process = childProcess.spawnSync(policyEnginePath, args, {
