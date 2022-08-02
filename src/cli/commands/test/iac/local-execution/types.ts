@@ -371,6 +371,7 @@ export enum IaCErrorCodes {
   NoBundle = 2004,
   OpenBundle = 2005,
   InvalidSeverityThreshold = 2006,
+  InvalidProjectTags = 2007,
   Scan = 2100,
   UnableToRecognizeInputType = 2101,
   UnsupportedInputType = 2102,

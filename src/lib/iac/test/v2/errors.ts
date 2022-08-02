@@ -14,6 +14,8 @@ const snykIacTestErrorsUserMessages = {
   OpenBundle: "The Snyk CLI couldn't open the rules bundle",
   InvalidSeverityThreshold:
     'The provided severity threshold is invalid. The following values are supported: "low", "medium", "high", "critical"',
+  InvalidProjectTags:
+    "The provided project tags are invalid. Tags must contain an '=' with a comma-separated list of key-value pairs",
   Scan: defaultUserMessage,
   UnableToRecognizeInputType: 'Input type was not recognized',
   UnsupportedInputType: 'Input type is not supported',
